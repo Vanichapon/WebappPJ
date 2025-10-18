@@ -51,13 +51,9 @@ Route::middleware([
     [UserdataController::class, 'index'
     ])->name('userdata');
 
-    Route::get('/adddata',
-    [testimonialdataController::class, 'adddata'
-    ])->name('adddata');
+    Route::get('/testimonialdata/add', [testimonialdataController::class, 'adddata'])->name('adddata');
 
-    Route::get('/editdata/{id}', function ($id) {
-        return view('editdata',compact('id'));
-    })->name('editdata');
+    Route::get('/editdata/{id}', [testimonialdataController::class, 'editdata'])->name('editdata');
 
     Route::get('/edituser/{id}', function ($id) {
         return view('edituser',compact('id'));
@@ -67,10 +63,8 @@ Route::middleware([
     [UserdataController::class, 'adduser'
     ])->name('adduser');
 
-    Route::get('/testimonialdata',
-    [testimonialdataController::class, 'testimonialdata'
-    ])->name('testimonialdata');
+    Route::get('/testimonialdata', [testimonialdataController::class, 'testimonialdata'])->name('testimonialdata');
 
-    
+
 });
 

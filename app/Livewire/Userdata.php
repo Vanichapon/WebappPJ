@@ -9,7 +9,7 @@ use Livewire\WithPagination;
 class Userdata extends Component
 {
     use WithPagination;
-    protected $paginationTheme = 'bootstrap';
+    protected $paginationTheme = 'bootstrap'; //กำหนดรูปแบบการแบ่งหน้าเป็น Bootstrap
 
     public function delete($id)
     {

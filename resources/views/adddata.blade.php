@@ -2,6 +2,6 @@
 
 @section('content')
 
-@livewire('adddata')
+        @livewire('adddata')
 
 @endsection

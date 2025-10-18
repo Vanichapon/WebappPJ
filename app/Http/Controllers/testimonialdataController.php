@@ -3,37 +3,27 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\testimonialdata;
+use App\Models\Testimonial;
 use App\Http\Controllers\Controller;
-
 
 class testimonialdataController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function testimonialdata()
     {
-        // dd(555);
-        // dd($testimonialdata);
-        // $model = testimonialdata::all();
-        // return view('testimonialdata', compact('model'));
+        $testimonials = Testimonial::all();
+        return view('testimonialdata', compact('testimonials'));
     }
 
     public function adddata()
     {
-        //dd(123);
         return view('adddata');
-        // $model = User::all();
-        // return view('adddata', compact('model'));
     }
 
-    public function editdata()
-    {
-        return view('editdata');
-        // $model = User::all();
-        // return view('editdata', compact('model'));
-    }
+    public function editdata($id)
+{
+    return view('editdata', compact('id'));
+}
+
 
     /**
      * Show the form for creating a new resource.
